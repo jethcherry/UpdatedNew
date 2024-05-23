@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
     <div class="container">
-        <h2>Sign Up</h2>
-        <form action="" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit" id="signupForm">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <div class="form-container">
+            <form id="signup-form">
+                <h2>Signup</h2>
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <div id="password-validation-message"></div>
+                <button type="submit">Signup</button>
+                <a href="login.html">Have an account? Login</a>
+            </form>
+        </div>
     </div>
+    <script src="signup.js"></script>
 </body>
 </html>

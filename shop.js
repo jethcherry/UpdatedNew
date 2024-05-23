@@ -37,6 +37,11 @@ closeShopping.addEventListener('click', () => {
     body.classList.remove('active');
 });
 
+// Add event listener to the quantity span to show/hide the cart
+quantity.addEventListener('click', () => {
+    body.classList.toggle('active');
+})
+
 function initApp() {
     products.forEach((product) => {
         let newDiv = document.createElement('div');
