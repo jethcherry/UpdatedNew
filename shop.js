@@ -149,6 +149,16 @@ function loadCartFromStorage() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    const spanElement = document.getElementById('span');
+
+    if (username) {
+        spanElement.textContent = `Hi, ${username}`;
+    }
+});
+
 function saveCartToStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -167,17 +177,17 @@ function reloadCart() {
             count += cartItem.quantity;
 
             let newDiv = document.createElement('li');
-            newDiv.innerHTML = `
-                <div><img src="images/${product.image}" alt="${product.name}"/></div>
-                <div>${product.name}</div>
-                <div>${subtotal.toLocaleString()}</div>
-                <div>
-                    <button onclick="changeQuantity(${product.id}, ${cartItem.quantity - 1})">-</button>
-                    <div class="count">${cartItem.quantity}</div>
-                    <button onclick="changeQuantity(${product.id}, ${cartItem.quantity + 1})">+</button>
-                </div>
-                <div><button onclick="removeFromCart(${product.id})">Remove</button></div>`;
-            listCard.appendChild(newDiv);
+newDiv.innerHTML = `
+    <div>${product.name}</div>
+    <div>${subtotal.toLocaleString()}</div>
+    <div style="display: flex; align-items: center;">
+        <button onclick="changeQuantity(${product.id}, ${cartItem.quantity - 1})" style="font-size: 16px;">&#9660;</button>
+        <div class="count" style="margin: 0 10px;">${cartItem.quantity}</div>
+        <button onclick="changeQuantity(${product.id}, ${cartItem.quantity + 1})" style="font-size: 16px;">&#9650;</button>
+    </div>
+    <div><button onclick="removeFromCart(${product.id})">Remove</button></div>`;
+listCard.appendChild(newDiv);
+
         }
     });
 

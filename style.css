@@ -50,6 +50,14 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+.links p {
+    margin: 0; 
+}
+
+.links #span {
+    font-weight: bold; 
+    color: green; 
+}
 
 .links a {
     color: white;
@@ -156,13 +164,15 @@ body.active .card {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;  /* Change display to flex */
+    flex-direction: column;  /* Default flex direction to column */
+    gap: 20px;  /* Add some space between items */
 }
 
 .listCard li {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;  /* Adds margin-bottom */
+    align-items: center;  /* Center items vertically */
+    justify-content: space-between;  /* Space items horizontally */
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 5px;
@@ -174,12 +184,13 @@ body.active .card {
     height: 100px;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-right: 10px;  /* Add some space between image and text */
 }
 
 .listCard li div {
-    margin: 5px 0;
+    margin: 5px;
     text-align: center;
+    flex: 1;  /* Allow div to take remaining space */
 }
 
 .listCard li .count {
