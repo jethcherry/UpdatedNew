@@ -1,5 +1,16 @@
 {
-    "user":{
-
+  "users": [
+    {
+      "id": "8f81",
+      "username": "jethro",
+      "email": "jethrosumbeiywet@gmail.com",
+      "password": "QWERYYR56*#asd"
+    },
+    {
+      "id": "23c4",
+      "username": "jethro",
+      "email": "jethrosumbeiywet@gmail.com",
+      "password": "QWERYYR56*#asd"
     }
+  ]
 }
