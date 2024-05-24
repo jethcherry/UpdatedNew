@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('signup-email').value;
         const password = document.getElementById('signup-password').value;
 
-        // Enhanced password validation
         const passwordValidation = validatePassword(password);
         if (!passwordValidation.isValid) {
             passwordValidationMessage.textContent = passwordValidation.message;
